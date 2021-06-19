@@ -113,11 +113,6 @@ app.post("/login/", async (request, response) => {
   }
 });
 
-/* app.get("/user/tweets/feed/" async (request,response) => {
-    const getTweetsQuery = `
-            SELECT *
-            FROM `
-}) */
 
 // API 10
 /* app.post("/user/tweets/",async (request,response) => {
