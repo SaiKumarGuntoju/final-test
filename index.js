@@ -223,16 +223,7 @@ app.post("/register/", async (request, response) => {
       await database.run(deleteStudentQuery);
       response.send("Student is  Removed")
   })
-app.delete("/student/:studentId/", async (request,response) => { 
-    const {student_id} = request.params;
-    const deleteStudentQuery = `
-        DELETE FROM 
-            student_table
-        WHERE 
-            student_id = ${studentId};`;
-    await database.run(deleteStudentQuery);
-    response.send("Student is  Removed")
-})
+
 
 module.exports = app;
 
