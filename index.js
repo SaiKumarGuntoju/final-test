@@ -114,13 +114,18 @@ app.post("/login/", async (request, response) => {
 });
 
 
-// API 10
-/* app.post("/user/tweets/",async (request,response) => {
-    const {tweet} = request.body;
-    const createTweetQuery = `
-        INSERT INTO tweet
-        ()`
-}) */
+//API TO DELETE THE STUDENT BASED ON STUDENT_ID 
+
+app.delete("/student/:studentId/", async (request,response) => { 
+    const {student_id} = request.params;
+    const deleteStudentQuery = `
+        DELETE FROM 
+            student_table
+        WHERE 
+            student_id = ${studentId};`;
+    await database.run(deleteStudentQuery);
+    response.send("Student is  Removed")
+})
 
 module.exports = app;
 
